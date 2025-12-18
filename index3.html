@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="cette page Web est dédiée aux trois premières saisons de Games of Thrones, succès mondial tiré des livres de George R.R Martin">
     <title>Game of Thrones</title>
     <link rel="stylesheet" href="styles3.css"> 
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
     <script src="script3.js" defer></script>
+    
 </head>
 <body class="fontt">
-    <header class="navbar">
-        <nav>
-            <a href="index2.html" class="dragon-link">
-                <img src="dragon.png" alt="Home" class="dragon-img" width="50" height="50" fetchpriority="high">
+ <header class="navbar">
+    <nav>
+        <div class="nav-left">
+            <a href="index2.html" class="nav-home-btn">Accueil</a>
+            <a href="#" class="dragon-link">
+                <img src="dragon.png" alt="Toggle Theme" class="dragon-img" width="50" height="50" fetchpriority="high">
             </a>
+        </div>
+        <div class="nav-links">
             <a href="#season1">S1</a>
             <a href="#season2">S2</a>
             <a href="#season3">S3</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
     <main>
         <section id="slide1" class="seasons">
             <h1>GAME OF THRONES</h1>
@@ -28,6 +36,9 @@
             <header><h2>Season 1 - Winter is Coming</h2></header>
             <article class="content-wrapper">
                 <div class="video-facade" data-id="bjqEWgDVPe0"></div>
+                <p>Première saison d'une série à succès, les épisodes de la saison 1 de Game of Throne prennent place dans un univers à deux continents : Essos à l'Est, Westeros à l'Ouest. 
+Poussé par le besoin d'un appuis solide, le Roi de Westeros se rend dans les terres du Nord afin de rendre visite à Ned Stark, son viel ami. Devenu Main du Roi suite à cet événement, Ned va découvrir l'ampleur des complots et de la corruption qui règne au sein du royaume. Il decouvre également la relation incestueuse entre la Reine et son frère, véritable père de tous les enfants de la Reine. Cette saison se conclut par l'exécution de Ned (qui menaçait de révéler au peuple ce qu'il savait et l'illégitimité de Joffrey à acceder au Trône)  ainsi que par l'intronisation de Joffrey en tant que souverain des 7 royaumes.
+Cette saison va poser les bases des intrigues que nous suivrons durant les prochaines saisons, dont l'intrigue principale : celle d'une bataille de pouvoir pour devenir Roi de Westeros et monter sur le Trône de Fer.</p>
             </article>
         </section>
 
@@ -45,6 +56,16 @@
             </article>
         </section>
     </main>
-    <footer><p></p></footer>
+  <section id="contact" class="season-box">
+    <article class="content-wrapper">
+        <form action="mailto:william.seiller@etu.univ-amu.fr" method="GET" enctype="text/plain" class="contact-form">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="body" required></textarea>
+            <button type="submit" class="contact-btn">Envoye</button>
+        </form>
+    </article>
+    </section>
 </body>
 </html>

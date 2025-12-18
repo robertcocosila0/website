@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     facades.forEach(facade => {
         const id = facade.getAttribute('data-id');
-        
-        facade.style.backgroundImage = `url('https://img.youtube.com/vi/${id}/hqdefault.jpg')`;
-
         facade.addEventListener('click', function() {
             this.innerHTML = `
                 <iframe 
@@ -16,3 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+const themeToggle = document.querySelector('.dragon-link');
+
+themeToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.body.classList.toggle('fire-theme');
+});
+
