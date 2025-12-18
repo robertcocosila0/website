@@ -3,7 +3,7 @@
 <head>
     <link rel="icon" type="image/svg+xml" href="logo(1).svg">
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,40 +11,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>RobertCocosila</title>
-    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-  </head>
+</head>
 <body>
-  <script src="script.js"></script>
-  <div id="to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </div>
+    <script src="script.js"></script>
+    <button id="to-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <header class="header">
         <a href="#home" class="logo">Robert Cocosila</a>
-    <button id="themeButton">🌙</button>
-    <nav class="navbar">   
-        <a href="index2.html">Collègues</a>
-        <a href="index3.html">Séries</a>
-        <a href="https://robertcocosila-blog.onrender.com/">Projets</a>
-      </nav>
-    
+        <button id="themeButton">🌙</button>
+        <nav class="navbar">   
+            <a href="index2.html">Collègues</a>
+            <a href="index3.html">Séries</a>
+            <a href="https://robertcocosila-blog.onrender.com/">Projets</a>
+        </nav>
     </header>
-    <section class="section home" id="home">
-    <div class="home-img">
-        <img src="profile.jpg" alt="imageTEST123">
-    <div class="home-content">
-        <h2 class="heading">Robert Cocosila</h2>
-        <h3>Je suis étudiant en première année d’informatique à</h3>
-        <h1>
-            <a href="https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-informatique/but-info-aix" target="_blank">
-                <p>l’IUT d’Aix-en-Provence</p>
+    <main class="home" id="home">
+        <section class="home-img">
+            <img src="profile.jpg" alt="Robert Cocosila Profile">
+        </section>
+
+        <article class="home-content">
+            <h2 class="heading">Robert Cocosila</h2>
+            <h3>Je suis étudiant en première année d’informatique à</h3>
+            <h1>
+                <a href="https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-informatique/but-info-aix" target="_blank">
+                    l’IUT d’Aix-en-Provence
                 </a>
             </h1>
-     <div class="social-media">
-      <a href="https://www.linkedin.com/in/robertcocosila/" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-linkedin"></i>
-</a>
-      <a href="https://github.com/robertcocosila" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-github"></i>
-</a>
+            <nav class="social-media">
+                <a href="https://www.linkedin.com/in/robertcocosila/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/robertcocosila" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </nav>
+        </article>
+    </main>
 </body>
 </html>

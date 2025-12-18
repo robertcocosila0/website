@@ -1,18 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-
   const themeButton = document.getElementById('themeButton');
   let darkMode = false;
 
   if (themeButton) {
       themeButton.addEventListener('click', () => {
           darkMode = !darkMode;
-
           themeButton.classList.add('rotate');
 
           setTimeout(() => {
@@ -24,78 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 400);
 
           document.body.classList.toggle('dark-theme', darkMode);
-      });
-  }
-
-  const toTopButton = document.getElementById('to-top');
-
-  if (toTopButton) {
-      toTopButton.addEventListener('click', () => {
-          window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-          });
-      });
-  }
-
-
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-      contactForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-
-          const csrftoken = getCookie('csrftoken'); 
-
-          const formData = new FormData(this);
-          const data = {
-              name: formData.get('name'),
-              email: formData.get('email'),
-              subject: formData.get('subject'),
-              message: formData.get('message')
-          };
-
-          const statusEl = document.getElementById('form-status');
-          
-          let djangoURL = 'https://robertcocosila-blog.onrender.com/api/contact/';
-          if (!window.location.href.startsWith('https://robertcocosila0.github.io/Personal-website-project/') && !window.location.href.startsWith('http://localhost')) {
-              djangoURL = 'https://robertcocosila-blog.onrender.com/api/contact/';
-          }
-          
-          try {
-            const headers = new Headers();
-            headers.append('Content-Type', 'application/json');
-            
-            if (csrftoken) {
-                headers.append('X-CSRFToken', csrftoken);
-            }
-            
-              const response = await fetch(djangoURL, {
-                  method: 'POST',
-                  headers: headers,
-                  body: JSON.stringify(data),
-                  credentials: 'include'
-              });
-
-              if (!response.ok) {
-                  const errorResult = await response.json();
-                  throw new Error(errorResult.message || `HTTP error! Status: ${response.status}`);
-              }
-
-              const result = await response.json();
-
-              if (result.status === 'success') {
-                  statusEl.style.color = 'green';
-                  statusEl.textContent = result.message;
-                  this.reset();
-              } else {
-                  statusEl.style.color = 'red';
-                  statusEl.textContent = 'Error: ' + result.message;
-              }
-          } catch (err) {
-              console.error(err);
-              statusEl.style.color = 'red';
-              statusEl.textContent = `Submission failed. Try again. Details: ${err.message}`;
-          }
       });
   }
 });
